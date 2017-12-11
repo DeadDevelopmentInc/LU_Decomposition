@@ -1,0 +1,7 @@
+D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\bin\Debug\LU_Dec.exe.config
+D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\bin\Debug\LU_Dec.exe
+D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\bin\Debug\LU_Dec.pdb
+D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\obj\Debug\LU_Dec.csprojResolveAssemblyReference.cache
+D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\obj\Debug\LU_Dec.csproj.CoreCompileInputs.cache
+D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\obj\Debug\LU_Dec.exe
+D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\obj\Debug\LU_Dec.pdb
