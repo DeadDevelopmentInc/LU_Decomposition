@@ -1,0 +1,6 @@
+D:\repos\LU_Decomposition\SltnsLibrary\obj\Debug\SltnsLibrary.csprojResolveAssemblyReference.cache
+D:\repos\LU_Decomposition\SltnsLibrary\obj\Debug\SltnsLibrary.csproj.CoreCompileInputs.cache
+D:\repos\LU_Decomposition\SltnsLibrary\bin\Debug\SltnsLibrary.dll
+D:\repos\LU_Decomposition\SltnsLibrary\bin\Debug\SltnsLibrary.pdb
+D:\repos\LU_Decomposition\SltnsLibrary\obj\Debug\SltnsLibrary.dll
+D:\repos\LU_Decomposition\SltnsLibrary\obj\Debug\SltnsLibrary.pdb

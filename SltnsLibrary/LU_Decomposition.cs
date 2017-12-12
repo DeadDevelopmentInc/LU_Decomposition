@@ -6,33 +6,47 @@ using System.Threading.Tasks;
 
 namespace SltnsLibrary
 {
-    class LU_Decomposition
+    public class LU_Decomposition
     {
-        double[,] U;
-        double[,] L;
-        double[] Y;
-        double[] X;
+        private IMatrix L;
+        private IMatrix U;
+        private double[] Y;
+        private double[] X;
 
-        public double[] Soulution(double[,] matrixA, double[] vectorB)
+        public void ClcltLU_Dcmp(string source, out double[] vectorB)
         {
-            L = new double[vectorB.GetLength(0), vectorB.GetLength(0)];
-            U = new double[vectorB.GetLength(0), vectorB.GetLength(0)];
-            Y = new double[vectorB.GetLength(0)];
-            X = new double[vectorB.GetLength(0)];
+            IMatrix matrix;
+            IOClass.ReadFile(source, out matrix, out vectorB);
 
-            double item;
+            L = new HashMatrix(1, matrix.getN());
+            U = new HashMatrix(1, matrix.getN());
+            Y = new double[matrix.getN()];
+            X = new double[matrix.getN()];
 
-            for (int i = 0; i < matrixA.GetLength(0); i++)
+            ClcltLU(matrix, matrix.getN());
+
+            Summary(matrix);
+
+            GiveReslt(vectorB);
+        }
+
+        private void ClcltLU(IMatrix matrix, int n)
+        {
+            for (int i = 0; i < n; i++)
             {
-                L[i, 0] = matrixA[i, 0];
-                U[0, i] = matrixA[0, i] / L[0, 0];
-                U[i, i] = 1;
+                L[i, 0] = matrix[i, 0];
+                U[0, i] = matrix[0, i] / L[0, 0];
+                U[i, i] = 1;                
             }
+        }
 
+        private void Summary(IMatrix matrix)
+        {
             double sum = 0;
-            for (int i = 1; i < L.GetLength(0); i++)
+
+            for (int i = 1; i < L.getN(); i++)
             {
-                for (int j = 1; j < L.GetLength(1); j++)
+                for (int j = 1; j < L.getN(); j++)
                 {
                     if (i >= j)
                     {
@@ -40,7 +54,7 @@ namespace SltnsLibrary
                         for (int k = 0; k < j; k++)
                             sum += L[i, k] * U[k, j];
 
-                        L[i, j] = matrixA[i, j] - sum;
+                        L[i, j] = matrix[i, j] - sum;
                     }
                     else
                     {
@@ -48,13 +62,17 @@ namespace SltnsLibrary
                         for (int k = 0; k < i; k++)
                             sum += L[i, k] * U[k, j];
 
-                        U[i, j] = (matrixA[i, j] - sum) / L[i, i];
+                        U[i, j] = (matrix[i, j] - sum) / L[i, i];
                     }
                 }
             }
+        }
 
+        private void GiveReslt(double[] vectorB)
+        {
+            double item; 
 
-            for (int i = 0; i < U.GetLength(0); i++)
+            for (int i = 0; i < U.getN(); i++)
             {
                 item = 0;
                 for (int j = 0; j < i; j++)
@@ -65,17 +83,15 @@ namespace SltnsLibrary
 
             }
 
-            for (int i = U.GetLength(0) - 1; i >= 0; i--)
+            for (int i = U.getN() - 1; i >= 0; i--)
             {
                 double d = 0;
-                for (int j = U.GetLength(1) - 1; j >= i + 1; j--)
+                for (int j = U.getN() - 1; j >= i + 1; j--)
                 {
                     d += U[i, j] * X[j];
                 }
                 X[i] = Y[i] - d;
             }
-
-            return X;
         }
     }
 }

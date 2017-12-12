@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SltnsLibrary;
 
 namespace LU
 {
@@ -11,54 +12,18 @@ namespace LU
     {
         static void Main(string[] args)
         {
-            string s;
-            int sizeMatrix;
-            double[,] matrixA;
-            double[] vectorB;
-            double[] X;
-            string fileName = "Matrix.txt";
+            string source = "input.txt";
 
-            int index = 0;
-            StreamReader f = null;
-            try
+            double[] vector;
+
+            LU_Decomposition decomposition = new LU_Decomposition();
+
+            decomposition.ClcltLU_Dcmp(source, out vector);
+
+            foreach(double x in vector)
             {
-                f = new StreamReader(fileName);
-                s = f.ReadLine();
-                sizeMatrix = Convert.ToInt32(s);
-                matrixA = new double[sizeMatrix, sizeMatrix];
-                vectorB = new double[sizeMatrix];
-                X = new double[sizeMatrix];
-
-                while (!f.EndOfStream)
-                {
-                    s = f.ReadLine();
-                    string[] str = s.Split(' ');
-
-                    for (int i = 0; i < sizeMatrix; i++)
-                    {
-                        matrixA[index, i] = Convert.ToDouble(str[i]);
-                    }
-                    vectorB[index] = Convert.ToDouble(str[sizeMatrix]);
-                    index++;
-                }
-
+                Console.Write(x + " ");
             }
-            catch (FileNotFoundException e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-                return;
-            }
-            MethodLU methodLU = new MethodLU();
-            X = methodLU.Soulution(matrixA, vectorB);
-
-            for (int i = 0; i < X.GetLength(0); i++)
-            {
-                Console.Write("{0:f2}     ", X[i]);
-            }
-            Console.ReadKey();
-
-
         }
     }
 }

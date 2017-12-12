@@ -29,5 +29,11 @@ namespace SltnsLibrary
         // возвращает ненулевые значения и индексы ячеек столбца d, 
         // которые находятся ниже главной диагонали
         void getJCol(int d, ref int[] indexes, ref double[] values);
+
+        double this[int row, int col]
+        {
+            get;
+            set;
+        }
     }
 }

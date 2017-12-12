@@ -46,6 +46,29 @@ namespace SltnsLibrary
             }
         }
 
+        public override double this[int row, int col]
+        {
+            get
+            {
+                if (row == col) return dd[row];
+                int d = getD(row, col);
+                int j = getJ(row, col);
+                return (j > 0) ? jp[d].getValue(j) : jm[d].getValue(-j);
+            }
+            set
+            {
+                if (row == col)
+                {
+                    dd[row] = value;
+                    return;
+                }
+                int d = getD(row, col);
+                int j = getJ(row, col);
+                if (j > 0) jp[d].setValue(j, value);
+                else jm[d].setValue(-j, value);
+            }
+        }
+
         public override void setValue(int row, int col, double value)
         {
             if (row == col)
