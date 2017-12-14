@@ -5,3 +5,12 @@ D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\obj\Debug\LU_Dec.csprojResol
 D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\obj\Debug\LU_Dec.csproj.CoreCompileInputs.cache
 D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\obj\Debug\LU_Dec.exe
 D:\УЧЁБА\2 КУРС\Курсач\LU_Dec\LU_Dec\obj\Debug\LU_Dec.pdb
+D:\repos\LU_Decomposition\LU_Dec\bin\Debug\LU_Dec.exe.config
+D:\repos\LU_Decomposition\LU_Dec\bin\Debug\LU_Dec.exe
+D:\repos\LU_Decomposition\LU_Dec\bin\Debug\LU_Dec.pdb
+D:\repos\LU_Decomposition\LU_Dec\obj\Debug\LU_Dec.csprojResolveAssemblyReference.cache
+D:\repos\LU_Decomposition\LU_Dec\obj\Debug\LU_Dec.csproj.CoreCompileInputs.cache
+D:\repos\LU_Decomposition\LU_Dec\obj\Debug\LU_Dec.exe
+D:\repos\LU_Decomposition\LU_Dec\obj\Debug\LU_Dec.pdb
+D:\repos\LU_Decomposition\LU_Dec\bin\Debug\SltnsLibrary.dll
+D:\repos\LU_Decomposition\LU_Dec\bin\Debug\SltnsLibrary.pdb

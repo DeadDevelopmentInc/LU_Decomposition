@@ -10,88 +10,102 @@ namespace SltnsLibrary
     {
         private IMatrix L;
         private IMatrix U;
+        private IMatrix R;
         private double[] Y;
         private double[] X;
 
         public void ClcltLU_Dcmp(string source, out double[] vectorB)
         {
-            IMatrix matrix;
-            IOClass.ReadFile(source, out matrix, out vectorB);
+            IMatrix A;
+            IOClass.ReadFile(source, out A, out vectorB);
 
-            L = new HashMatrix(1, matrix.getN());
-            U = new HashMatrix(1, matrix.getN());
-            Y = new double[matrix.getN()];
-            X = new double[matrix.getN()];
-
-            ClcltLU(matrix, matrix.getN());
-
-            Summary(matrix);
-
-            GiveReslt(vectorB);
-        }
-
-        private void ClcltLU(IMatrix matrix, int n)
-        {
-            for (int i = 0; i < n; i++)
+            foreach (double x in vectorB)
             {
-                L[i, 0] = matrix[i, 0];
-                U[0, i] = matrix[0, i] / L[0, 0];
-                U[i, i] = 1;                
+                Console.Write(x + " ");
+            }
+
+            L = new LMatrix(1, A.getN());
+            U = new UMatrix(1, A.getN());
+            R = new UMatrix(1, A.getN());
+            Y = new double[A.getN()];
+            X = new double[A.getN()];
+
+            ClcltLU(A, A.getN(), vectorB);
+
+            Multiply(A.getN());
+
+            Console.WriteLine();
+
+            foreach (double x in X)
+            {
+                Console.Write(x + " ");
             }
         }
 
-        private void Summary(IMatrix matrix)
+        private void ClcltLU(IMatrix A, int n, double[] vectorB)
         {
-            double sum = 0;
+            double item;
 
-            for (int i = 1; i < L.getN(); i++)
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 1; j < L.getN(); j++)
+                U[i, 0] = A[i, 0];
+                L[0, i] = A[0, i] / U[0, 0];
+                L[i, i] = 1;
+            }
+
+            double sum = 0;
+            for (int i = 1; i < n; i++)
+            {
+                for (int j = 1; j < n; j++)
                 {
                     if (i >= j)
                     {
                         sum = 0;
                         for (int k = 0; k < j; k++)
-                            sum += L[i, k] * U[k, j];
+                            sum += U[i, k] * L[k, j];
 
-                        L[i, j] = matrix[i, j] - sum;
+                        U[i, j] = A[i, j] - sum;
                     }
                     else
                     {
                         sum = 0;
                         for (int k = 0; k < i; k++)
-                            sum += L[i, k] * U[k, j];
+                            sum += U[i, k] * L[k, j];
 
-                        U[i, j] = (matrix[i, j] - sum) / L[i, i];
+                        L[i, j] = (A[i, j] - sum) / U[i, i];
                     }
                 }
             }
-        }
 
-        private void GiveReslt(double[] vectorB)
-        {
-            double item; 
 
-            for (int i = 0; i < U.getN(); i++)
+            for (int i = 0; i < n; i++)
             {
                 item = 0;
                 for (int j = 0; j < i; j++)
                 {
-                    item += L[i, j] * Y[j];
+                    item += U[i, j] * Y[j];
                 }
-                Y[i] = (vectorB[i] - item) / L[i, i];
+                Y[i] = (vectorB[i] - item) / U[i, i];
 
             }
 
-            for (int i = U.getN() - 1; i >= 0; i--)
+            for (int i = n - 1; i >= 0; i--)
             {
                 double d = 0;
-                for (int j = U.getN() - 1; j >= i + 1; j--)
+                for (int j = n - 1; j >= i + 1; j--)
                 {
-                    d += U[i, j] * X[j];
+                    d += L[i, j] * X[j];
                 }
                 X[i] = Y[i] - d;
             }
+        }
+
+        private void Multiply(int n)
+        {
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    for (int k = 0; k < n; k++)
+                        R[i, j] = R[i, j] + L[i, k] * U[k, j];
         }
     }
 }

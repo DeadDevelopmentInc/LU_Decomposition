@@ -28,17 +28,17 @@ namespace SltnsLibrary
                 }
             }
             //создание начальной матрицы
-            matrix = new HashMatrix(1, count);
+            matrix = new UMatrix(1, count);
             vectorB = new double[count];
             //Ввод элементов из файла
             for (int i = 0; i < allElement.Count; i++)
             {
                 string[] part = allElement[i].Split(' ');
-                for (int j = 0; j < allElement.Count - 1; i++)
+                for (int j = 0; j < part.Length - 1; j++)
                 {
-                    matrix.addValue(i, j, Double.Parse(part[j]));
+                    matrix[i, j] =  Double.Parse(part[j]);
                 }
-                vectorB[i] = Convert.ToDouble(part[i]);
+                vectorB[i] = Convert.ToDouble(part[part.Length - 1]);
             }
         }
     }

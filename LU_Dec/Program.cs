@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SltnsLibrary;
+using System.Collections;
 
 namespace LU
 {
@@ -12,7 +13,7 @@ namespace LU
     {
         static void Main(string[] args)
         {
-            string source = "input.txt";
+            string source = "Matrix.txt";
 
             double[] vector;
 
@@ -20,10 +21,7 @@ namespace LU
 
             decomposition.ClcltLU_Dcmp(source, out vector);
 
-            foreach(double x in vector)
-            {
-                Console.Write(x + " ");
-            }
+            Console.ReadKey();
         }
     }
 }
