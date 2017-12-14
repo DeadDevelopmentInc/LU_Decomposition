@@ -38,7 +38,7 @@ namespace LU
                 {
                     case 1:
                         {
-                            Console.WriteLine("What kind of source(file or hand-create values)\n" +
+                            Console.WriteLine("What kind of source(file (1) or hand-create values (2))\n" +
                                 "Your number: ");
                             int fl = Convert.ToInt32(Console.ReadLine());
                             switch(fl)

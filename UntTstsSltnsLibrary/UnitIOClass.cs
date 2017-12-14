@@ -4,10 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UntTstsSltnsLibrary
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitIOClass
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestReadFile()
         {
         }
     }

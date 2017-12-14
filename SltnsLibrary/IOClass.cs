@@ -44,20 +44,45 @@ namespace SltnsLibrary
 
         public static void ReadConsole(out IMatrix matrix, out double[] vectorB)
         {
-            Console.WriteLine("Input rows and colns of matrix");
-            int count = int.Parse(Console.ReadLine());
+            int count = 0;
+            bool fl = false;
+            while(!fl)
+            {
+                Console.Clear();
+                Console.WriteLine("Input rows and colns of matrix");
+                count = int.Parse(Console.ReadLine());
+                if (count > 0 && count <= 50000)
+                {
+                    fl = true;
+                }
+                else
+                {
+                    Console.WriteLine("Please write correct value. More than 0 and less than 50000");
+                    Console.WriteLine("Press any key to retry");
+                    Console.ReadKey();
+                }
+
+            }
 
             matrix = new UMatrix(count);
             vectorB = new double[count];
-
-            for(int i = 0; i < count; i++)
+            int i = 0;
+            while(i < count)
             {
-                Console.WriteLine("Input " + i.ToString() + " rows");
-                string byfer = Console.ReadLine();
-                string[] parts = byfer.Split(' ');
-                for(int j = 0; j < parts.Length; j++)
+                Console.WriteLine("Input " + (i+ 1).ToString() + " rows");
+                try
                 {
-                    matrix[i, j] = Double.Parse(parts[j]);
+                    string byfer = Console.ReadLine();
+                    string[] parts = byfer.Split(' ');
+                    for (int j = 0; j < parts.Length; j++)
+                    {
+                        matrix[i, j] = Double.Parse(parts[j]);
+                    }
+                    i++;
+                }
+                catch
+                {
+                    Console.WriteLine("Please reinput string.");
                 }
             }
             Console.WriteLine("Input vector B");
