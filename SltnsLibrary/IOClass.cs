@@ -28,7 +28,7 @@ namespace SltnsLibrary
                 }
             }
             //создание начальной матрицы
-            matrix = new UMatrix(1, count);
+            matrix = new UMatrix(count);
             vectorB = new double[count];
             //Ввод элементов из файла
             for (int i = 0; i < allElement.Count; i++)
@@ -46,8 +46,10 @@ namespace SltnsLibrary
         {
             Console.WriteLine("Input rows and colns of matrix");
             int count = int.Parse(Console.ReadLine());
-            matrix = new UMatrix(1, count);
+
+            matrix = new UMatrix(count);
             vectorB = new double[count];
+
             for(int i = 0; i < count; i++)
             {
                 Console.WriteLine("Input " + i.ToString() + " rows");

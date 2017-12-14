@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SltnsLibrary
 {
-    public class Hash : IRow
+    public class Hash
     {
         // хэш-таблица в формате номер_ненулевой_ячейки = значение_ячейки
         private Hashtable hash = new Hashtable();

@@ -26,9 +26,9 @@ namespace SltnsLibrary
                 IOClass.ReadConsole(out A, out vectorB);
             }
 
-            L = new LMatrix(1, A.getN());
-            U = new UMatrix(1, A.getN());
-            R = new UMatrix(1, A.getN());
+            L = new LMatrix(A.getN());
+            U = new UMatrix(A.getN());
+            R = new UMatrix(A.getN());
             Y = new double[A.getN()];
             X = new double[A.getN()];
 

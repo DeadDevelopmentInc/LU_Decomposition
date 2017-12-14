@@ -13,28 +13,17 @@ namespace SltnsLibrary
         public const byte HASH_TYPE = 1;
 
         // jp - строки полуматрицы
-        private IRow[] jp;
+        private Hash[] jp;
 
         // конструктор матрицы
         // type - тип хранения данных ARRAY_TYPE/HASH_TYPE
         // N - порядок матрицы
-        public LMatrix(byte type, int N) : base(N)
+        public LMatrix(int N) : base(N)
         {
-            if (type == HASH_TYPE)
+            jp = new Hash[N];
+            for (int i = 0; i < N; i++)
             {
-                jp = new Hash[N];
-                for (int i = 0; i < N; i++)
-                {
-                    jp[i] = new Hash();
-                }
-            }
-            else
-            {
-                jp = new Array[N];
-                for (int i = 0; i < N; i++)
-                {
-                    jp[i] = new Array();
-                }
+                jp[i] = new Hash();
             }
         }
 
