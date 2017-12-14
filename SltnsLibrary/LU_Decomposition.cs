@@ -12,16 +12,18 @@ namespace SltnsLibrary
         private IMatrix U;
         private IMatrix R;
         private double[] Y;
-        private double[] X;
 
-        public void ClcltLU_Dcmp(string source, out double[] vectorB)
+        public void ClcltLU_Dcmp(string source, int inputType, out double[] X)
         {
             IMatrix A;
-            IOClass.ReadFile(source, out A, out vectorB);
-
-            foreach (double x in vectorB)
+            double[] vectorB;
+            if(inputType == 1)
             {
-                Console.Write(x + " ");
+                IOClass.ReadFile(source, out A, out vectorB);
+            }
+            else
+            {
+                IOClass.ReadConsole(out A, out vectorB);
             }
 
             L = new LMatrix(1, A.getN());
@@ -30,19 +32,10 @@ namespace SltnsLibrary
             Y = new double[A.getN()];
             X = new double[A.getN()];
 
-            ClcltLU(A, A.getN(), vectorB);
-
-            Multiply(A.getN());
-
-            Console.WriteLine();
-
-            foreach (double x in X)
-            {
-                Console.Write(x + " ");
-            }
+            ClcltLU(A, A.getN(), vectorB, X);
         }
 
-        private void ClcltLU(IMatrix A, int n, double[] vectorB)
+        private void ClcltLU(IMatrix A, int n, double[] vectorB, double[] X)
         {
             double item;
 
@@ -98,14 +91,6 @@ namespace SltnsLibrary
                 }
                 X[i] = Y[i] - d;
             }
-        }
-
-        private void Multiply(int n)
-        {
-            for (int i = 0; i < n; i++)
-                for (int j = 0; j < n; j++)
-                    for (int k = 0; k < n; k++)
-                        R[i, j] = R[i, j] + L[i, k] * U[k, j];
         }
     }
 }

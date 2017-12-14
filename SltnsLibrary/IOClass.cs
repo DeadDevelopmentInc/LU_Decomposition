@@ -41,5 +41,30 @@ namespace SltnsLibrary
                 vectorB[i] = Convert.ToDouble(part[part.Length - 1]);
             }
         }
+
+        public static void ReadConsole(out IMatrix matrix, out double[] vectorB)
+        {
+            Console.WriteLine("Input rows and colns of matrix");
+            int count = int.Parse(Console.ReadLine());
+            matrix = new UMatrix(1, count);
+            vectorB = new double[count];
+            for(int i = 0; i < count; i++)
+            {
+                Console.WriteLine("Input " + i.ToString() + " rows");
+                string byfer = Console.ReadLine();
+                string[] parts = byfer.Split(' ');
+                for(int j = 0; j < parts.Length; j++)
+                {
+                    matrix[i, j] = Double.Parse(parts[j]);
+                }
+            }
+            Console.WriteLine("Input vector B");
+            string byfers = Console.ReadLine();
+            string[] part = byfers.Split(' ');
+            for (int j = 0; j < part.Length; j++)
+            {
+                vectorB[j] = Convert.ToDouble(part[j]);
+            }
+        }
     }
 }
