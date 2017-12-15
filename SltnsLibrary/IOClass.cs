@@ -17,7 +17,7 @@ namespace SltnsLibrary
 
 
             List<string> allElement = new List<string>();
-            //Считвание значений в переменнуй строками
+            //Counting values in alternating rows
             using (StreamReader fs = new StreamReader(source))
             {
                 string line;
@@ -27,10 +27,10 @@ namespace SltnsLibrary
                     count++;
                 }
             }
-            //создание начальной матрицы
+            //Creation of the initial matrix
             matrix = new UMatrix(count);
             vectorB = new double[count];
-            //Ввод элементов из файла
+            //Entering elements from a file
             for (int i = 0; i < allElement.Count; i++)
             {
                 string[] part = allElement[i].Split(' ');

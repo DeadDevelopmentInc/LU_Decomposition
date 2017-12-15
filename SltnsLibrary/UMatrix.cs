@@ -8,16 +8,13 @@ namespace SltnsLibrary
 {
     public class UMatrix : Matrix
     {
-        // тип хранения данных: массив или хэш-таблица
-        public const byte ARRAY_TYPE = 0;
-        public const byte HASH_TYPE = 1;
-
-        // jp - строки полуматрицы
+        // jp - rows of the semimatrix
         private Hash[] jp;
 
-        // конструктор матрицы
-        // type - тип хранения данных ARRAY_TYPE/HASH_TYPE
-        // N - порядок матрицы
+        /// <summary>
+        /// Constructor of matrix
+        /// </summary>
+        /// <param name="N">order of the matrix</param>
         public UMatrix(int N) : base(N)
         {
             jp = new Hash[N];

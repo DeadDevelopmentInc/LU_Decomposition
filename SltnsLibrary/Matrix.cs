@@ -8,7 +8,7 @@ namespace SltnsLibrary
 {
     public abstract class Matrix : IMatrix
     {
-        // порядок матрицы
+        // order of matrix
         private int N;
 
         public abstract double this[int row, int col] { get; set; }
@@ -20,7 +20,7 @@ namespace SltnsLibrary
 
 
 
-        // возвращает порядок матрицы
+        // return order of matrix
         public int getN()
         {
             return N;

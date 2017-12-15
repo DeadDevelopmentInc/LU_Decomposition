@@ -9,18 +9,18 @@ namespace SltnsLibrary
 {
     public class Hash
     {
-        // хэш-таблица в формате номер_ненулевой_ячейки = значение_ячейки
+        // hash table in format number of nonzero cell = cell value
         private Hashtable hash = new Hashtable();
 
         public void setValue(int num, double value)
         {
-            // если значение 0-вое, то удаляем данную ячейку
+            // if the value is 0, then delete this cell
             if (value == 0)
             {
                 if (hash.ContainsKey(num)) hash.Remove(num);
                 return;
             }
-            // если значение не 0-вое, то перезаписываем или добавляем ячейку
+            // if the value is not 0, we overwrite or add a cell
             hash[num] = value;
         }
 
@@ -30,24 +30,11 @@ namespace SltnsLibrary
             else hash[num] = value;
         }
 
+        //return value if hash contain num or return 0
         public double getValue(int num)
         {
             if (hash.ContainsKey(num)) return (double)hash[num];
             return 0;
-        }
-
-        public void getValues(ref int[] indexes, ref double[] values)
-        {
-            System.Collections.ICollection keys = hash.Keys;
-            int count = keys.Count;
-            indexes = new int[count];
-            values = new double[count];
-            int i = 0;
-            for (IEnumerator it = keys.GetEnumerator(); it.MoveNext();)
-            {
-                indexes[i] = (int)it.Current;
-                values[i++] = (double)hash[it.Current];
-            }
         }
     }
 }

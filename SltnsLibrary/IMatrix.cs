@@ -8,9 +8,10 @@ namespace SltnsLibrary
 {
     public interface IMatrix
     {
-        // возвращает порядок матрицы
+        //returns the order of the matrix
         int getN();
 
+        //index
         double this[int row, int col]
         {
             get;
