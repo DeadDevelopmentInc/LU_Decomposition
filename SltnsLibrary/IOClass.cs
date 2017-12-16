@@ -8,7 +8,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace SltnsLibrary
 {
-    class IOClass
+    public class IOClass
     {
         public static void ReadFile(string source, out IMatrix matrix,
             out double[] vectorB)
