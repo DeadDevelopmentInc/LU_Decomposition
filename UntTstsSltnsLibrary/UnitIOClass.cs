@@ -57,24 +57,21 @@ namespace UntTstsSltnsLibrary
         {
             sourceMx = "Matrix10.txt";
 
-            double[] XX = new double[] { 0.73421, 0.27065, -1.05448, -0.50694 };
+            sourceOut = "Array10.txt";
+
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
-            foreach (double x in X)
-            {
-                X[0] = Math.Round(X[0], 5);
-            }
             int i = 0;
             bool fl = false;
             while (!fl && i < X.Length)
             {
-                if (X[i] == XX[0])
+                if (Math.Round(X[i], 5) == XX[0])
                     fl = true;
                 i++;
             }
             Assert.AreEqual(true, fl);
-
         }
 
         [TestMethod]
@@ -82,19 +79,17 @@ namespace UntTstsSltnsLibrary
         {
             sourceMx = "Matrix10r.txt";
 
-            double[] XX = new double[] { 0.73421, 0.27065, -1.05448, -0.50694 };
+            sourceOut = "Array10r.txt";
+
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
-            foreach (double x in X)
-            {
-                X[0] = Math.Round(X[0], 5);
-            }
             int i = 0;
             bool fl = false;
             while (!fl && i < X.Length)
             {
-                if (X[i] == XX[0])
+                if (Math.Round(X[i], 5) == XX[0])
                     fl = true;
                 i++;
             }
@@ -107,21 +102,17 @@ namespace UntTstsSltnsLibrary
         {
             sourceMx = "Matrix15r.txt";
 
-            sourceOut = "Array15r.txt";
+            sourceOut = "Array15.txt";
 
-            double[] XX = ReadArray(sourceOut, 40);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
-            foreach (double x in X)
-            {
-                X[0] = Math.Round(X[0], 5);
-            }
             int i = 0;
             bool fl = false;
             while (!fl && i < X.Length)
             {
-                if (X[i] == XX[0])
+                if (Math.Round(X[i], 5) == XX[0])
                     fl = true;
                 i++;
             }
@@ -136,7 +127,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array20.txt";
 
-            double[] XX = ReadArray(sourceOut, 100);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
@@ -158,7 +149,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array25.txt";
 
-            double[] XX = ReadArray(sourceOut, 100);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
@@ -180,7 +171,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array30.txt";
 
-            double[] XX = ReadArray(sourceOut, 100);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
@@ -202,7 +193,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array35.txt";
 
-            double[] XX = ReadArray(sourceOut, 100);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
@@ -224,7 +215,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array40r.txt";
 
-            double[] XX = ReadArray(sourceOut, 40);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
@@ -247,7 +238,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array45.txt";
 
-            double[] XX = ReadArray(sourceOut, 100);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
@@ -269,7 +260,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array50.txt";
 
-            double[] XX = ReadArray(sourceOut, 100);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
@@ -291,7 +282,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array40.txt";
 
-            double[] XX = ReadArray(sourceOut, 40);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
@@ -314,7 +305,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array100.txt";
 
-            double[] XX = ReadArray(sourceOut, 100);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
@@ -336,7 +327,7 @@ namespace UntTstsSltnsLibrary
 
             sourceOut = "Array200.txt";
 
-            double[] XX = ReadArray(sourceOut, 100);
+            double[] XX = ReadArray(sourceOut, 4);
 
             decomposition.ClcltLU_Dcmp(sourceMx, from, out X);
 
