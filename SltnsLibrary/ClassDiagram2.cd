@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SltnsLibrary.Hash">
+    <Position X="3" Y="3" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACACAAIAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Hash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SltnsLibrary.IOClass" Collapsed="true">
+    <Position X="8" Y="0.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IOClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SltnsLibrary.LMatrix" Collapsed="true">
+    <Position X="1" Y="1.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>LMatrix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SltnsLibrary.LU_Decomposition">
+    <Position X="10.5" Y="1.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAQCIQA=</HashCode>
+      <FileName>LU_Decomposition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SltnsLibrary.Matrix" Collapsed="true">
+    <Position X="3" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAABAAEAA=</HashCode>
+      <FileName>Matrix.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SltnsLibrary.UMatrix" Collapsed="true">
+    <Position X="5" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>UMatrix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SltnsLibrary.IMatrix">
+    <Position X="9.25" Y="4.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>IMatrix.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

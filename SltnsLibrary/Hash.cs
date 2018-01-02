@@ -12,6 +12,11 @@ namespace SltnsLibrary
         // hash table in format number of nonzero cell = cell value
         private Hashtable hash = new Hashtable();
 
+        /// <summary>
+        /// Method for set value in hash
+        /// </summary>
+        /// <param name="num">Value</param>
+        /// <param name="value">Key</param>
         public void setValue(int num, double value)
         {
             // if the value is 0, then delete this cell
@@ -24,13 +29,22 @@ namespace SltnsLibrary
             hash[num] = value;
         }
 
+        /// <summary>
+        /// Method for add for ext item some value
+        /// </summary>
+        /// <param name="num">Value</param>
+        /// <param name="value">Key</param>
         public void addValue(int num, double value)
         {
             if (hash.ContainsKey(num)) hash[num] = (double)hash[num] + value;
             else hash[num] = value;
         }
 
-        //return value if hash contain num or return 0
+        /// <summary>
+        /// Method for get value from hash
+        /// </summary>
+        /// <param name="num">Key</param>
+        /// <returns>return value if hash contain num or return 0</returns>
         public double getValue(int num)
         {
             if (hash.ContainsKey(num)) return (double)hash[num];

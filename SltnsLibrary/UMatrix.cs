@@ -24,6 +24,12 @@ namespace SltnsLibrary
             }
         }
 
+        /// <summary>
+        /// Override method for index in matrix
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <returns>return value for row and col</returns>
         public override double this[int row, int col]
         {
             get

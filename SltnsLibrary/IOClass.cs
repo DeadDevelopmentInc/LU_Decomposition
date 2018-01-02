@@ -10,6 +10,12 @@ namespace SltnsLibrary
 {
     public class IOClass
     {
+        /// <summary>
+        /// Method for read fole
+        /// </summary>
+        /// <param name="source">sourse for read</param>
+        /// <param name="matrix">out param readed matrix</param>
+        /// <param name="vectorB">out param readed vector B</param>
         public static void ReadFile(string source, out IMatrix matrix,
             out double[] vectorB)
         {
@@ -42,6 +48,11 @@ namespace SltnsLibrary
             }
         }
 
+        /// <summary>
+        /// Method for read value from console
+        /// </summary>
+        /// <param name="matrix">out param readed matrix</param>
+        /// <param name="vectorB">out param readed vector B</param>
         public static void ReadConsole(out IMatrix matrix, out double[] vectorB)
         {
             int count = 0;

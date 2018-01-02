@@ -13,8 +13,9 @@ namespace LU
     {
         static void Main(string[] args)
         {
+            //Create method
             LU_Decomposition decomposition = new LU_Decomposition();
-
+            //Create source
             string source = "Matrix.txt";
 
             int from = 0;
@@ -72,7 +73,8 @@ namespace LU
                         break;
                     case 3:
                         {
-                            Console.Write("I");
+                            Console.Clear();
+                            Console.Write("Program for design SLAE");
                         }
                         break;
                     case 4:
